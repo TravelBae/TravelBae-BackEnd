@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_transactions', function (Blueprint $table) {
-            $table->id('id_transaction');
+            $table->id();
             $table->bigInteger('id_customer')->unsigned();
             $table->bigInteger('id_metode_pembayaran')->unsigned();
             $table->integer('harga_total');

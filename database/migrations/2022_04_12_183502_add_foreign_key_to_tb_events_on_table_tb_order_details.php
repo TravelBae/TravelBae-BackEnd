@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_owners', function (Blueprint $table) {
-            $table->id();
-            $table->string('username_owner');
-            $table->string('password_owner');
-            $table->string('nama_owner');
-            $table->string('role_id');
+        Schema::table('tb_order_details', function (Blueprint $table) {
+            $table->foreign('id_event')->references('id')->on('tb_events')->onDelete('cascade');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_owners');
+        Schema::table('tb_order_details', function (Blueprint $table) {
+            Schema::dropIfExists('id_event');
+        });
     }
 };

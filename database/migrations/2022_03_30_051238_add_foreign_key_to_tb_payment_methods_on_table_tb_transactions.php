@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('tb_transactions', function (Blueprint $table) {
-            $table->foreign('id_metode_pembayaran')->references('id_metode_pembayaran')->on('tb_payment_methods')->onDelete('cascade');
+            $table->foreign('id_metode_pembayaran')->references('id')->on('tb_payment_methods')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('tb_transactions', function (Blueprint $table) {
-            $table->dropForeign('tb_orders_id_metode_pembayaran');
+            Schema::dropIfExists('id_metode_pembayaran');
         });
     }
 };
