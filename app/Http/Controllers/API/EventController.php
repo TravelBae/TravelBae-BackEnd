@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\tour_place;
+use App\Models\event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class TourismPlacesController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class TourismPlacesController extends Controller
      */
     public function index()
     {
-        return tour_place::all();
+        return event::all();
     }
 
     /**
@@ -35,32 +36,40 @@ class TourismPlacesController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate ([
-            "nama_tempat" => "unique:tb_tour_places|required"
+        $validator = Validator::make($request->all(),[
+            "nama_event" => "unique:tb_events|required"
         ], [
-            "unique" => "nama dah diisi moumen"
+            "unique" => "Name already used!",
+            "required" => "Please enter event name!"
         ]);
-        return tour_place::create($request->all());
+
+        if ($validator->fails()) {
+            return [
+                'message' => $validator->errors()
+            ];
+        }
+
+        return event::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tour_place  $tour_place
+     * @param  \App\Models\event  $event
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return tour_place::find($id);
+        return event::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\tour_place  $tour_place
+     * @param  \App\Models\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(tour_place $tour_place)
+    public function edit(event $event)
     {
         //
     }
@@ -69,31 +78,38 @@ class TourismPlacesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tour_place  $tour_place
+     * @param  \App\Models\event  $event
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $place = tour_place::find($id);
-        if ($place -> nama_tempat != $request -> nama_tempat) {
-            $request -> validate ([
-                "nama_tempat" => "unique:tb_tour_places|required"
+        $event = event::find($id);
+        if ($event -> nama_event != $request -> nama_event) {
+            $validator = Validator::make($request->all(),[
+                "nama_event" => "unique:tb_events|required"
             ], [
-                "unique" => "nama dah diisi moumen"
+                "unique" => "Name already used!",
+                "required" => "Please enter event name!"
             ]);
+    
+            if ($validator->fails()) {
+                return [
+                    'message' => $validator->errors()
+                ];
+            }
         }
-        $place->update($request->all());
-        return $place;
+        $event->update($request->all());
+        return $event;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tour_place  $tour_place
+     * @param  \App\Models\event  $event
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        return tour_place::destroy($id);
+        return event::destroy($id);
     }
 }
