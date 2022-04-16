@@ -48,6 +48,7 @@ class AuthController extends Controller
         return response([
             'message' => 'Success to login',
             'token' => $token,
+            'username' => $validator['username'],
             'role_id' => $validator_role['role_id']
         ], 200);
     }
