@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class tb_order extends Model
 {
+    use HasFactory;
     protected $fillable = [
-        'username_admin',
-        'password_admin', 
-        'nama_admin', 
-        'noHP_admin', 
-        'role_id'
+        'id_customer',
+        'order_status',
+        'tanggal_beli',
+        'total_bayar'
     ];
 }
