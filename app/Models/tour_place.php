@@ -11,6 +11,7 @@ class tour_place extends Model
     protected $table = 'tb_tour_places';
     protected $fillable = [
         'nama_tempat',
+        'kategori',
         'tipe',
         'deskripsi',
         'stok_tiket',

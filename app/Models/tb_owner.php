@@ -11,9 +11,9 @@ class tb_owner extends Authenticatable
 {
     use HasApiTokens, HasFactory;
     protected $fillable = [
-        'username_owner',
-        'password_owner',
-        'nama_owner',
+        'username',
+        'password',
+        'nama',
         'role_id'
     ];
 }

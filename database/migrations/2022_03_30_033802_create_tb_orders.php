@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('tb_orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_customer');
+            $table->string('nama_customer');
             $table->string('order_status');
             $table->date('tanggal_beli');
             $table->integer('total_bayar');
+            $table->integer('total_tiket');
         });
     }
 

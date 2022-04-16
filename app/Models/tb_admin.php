@@ -11,10 +11,10 @@ class tb_admin extends Authenticatable
 {
     use HasApiTokens, HasFactory;
     protected $fillable = [
-        'username_admin',
-        'password_admin',
-        'nama_admin',
-        'noHP_admin',
+        'username',
+        'password',
+        'nama',
+        'noHP',
         'role_id'
     ];
 }

@@ -26,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        
+
     }
     /**
      * Store a newly created resource in storage.
@@ -91,7 +91,7 @@ class EventController extends Controller
                 "unique" => "Name already used!",
                 "required" => "Please enter event name!"
             ]);
-    
+
             if ($validator->fails()) {
                 return [
                     'message' => $validator->errors()
