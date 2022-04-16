@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_order_details', function (Blueprint $table) {
-            $table->id('id_order_detail');
-            $table->integer('id_tempat');
-            $table->integer('id_event');
-            $table->integer('id_order');
+            $table->id();
+            $table->unsignedBigInteger('id_tempat');            
+            $table->unsignedBigInteger('id_event');            
+            $table->unsignedBigInteger('id_order');            
             $table->string('atas_nama');
         });
     }

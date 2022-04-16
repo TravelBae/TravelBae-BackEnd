@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_payment_methods', function (Blueprint $table) {
-            $table->id('id_metode_pembayaran');
+            $table->id();
             $table->string('nama_rekening');
             $table->string('nomor_rekening');
             $table->string('atas_nama');

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_orders', function (Blueprint $table) {
-            $table->id('id_order');
+            $table->id();
             $table->unsignedBigInteger('id_customer');
             $table->string('order_status');
             $table->date('tanggal_beli');
