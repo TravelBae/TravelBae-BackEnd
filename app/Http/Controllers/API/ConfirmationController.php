@@ -11,7 +11,7 @@ class ConfirmationController extends Controller
     public function confirmation($id)
     {
         $order = tb_order::find($id);
-        $order -> order_status = "confirmed";
+        $order -> order_status = "Confirmed";
         $order -> save();
         // $event->update($request->all());
         $messages = [

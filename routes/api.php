@@ -24,6 +24,7 @@ Route::group(["middleware" =>['auth:sanctum']], function() {
     Route::resource('tourplaces', TourismPlacesController::class);
     Route::resource('event', EventController::class);
     Route::resource('admin/order', OrderController::class);
-    Route::get('admin/confirmation/{id}', [ConfirmationController::class, 'confirmation']);
+    Route::post('admin/confirmation/{id}', [ConfirmationController::class, 'confirmation']);
     Route::get('owner/homepage', [ViewAllHomepageController::class, 'homepage']);
+    Route::resource('owner/order', OrderController::class);
 });
