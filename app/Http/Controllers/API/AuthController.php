@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\RequestGuard;
 use App\Models\tb_admin;
 use App\Models\tb_owner;
+use App\Models\tb_customers;
 
 class AuthController extends Controller
 {
@@ -44,6 +45,18 @@ class AuthController extends Controller
             }
 
             $token = $owner->createToken("secret") -> plainTextToken;
+
+        } else if ($validator_role['role_id'] == "3") {
+
+            $customer = tb_customers::where('username', $validator['username']) -> first();
+
+            if(!$customer || !($customer->password == $validator["password"])) {
+                return response([
+                    "message" => "Username or Password can't be found",
+                ], 400);
+            }
+
+            $token = $customer->createToken("secret") -> plainTextToken;
         }
         return response([
             'message' => 'Success to login',
