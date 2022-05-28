@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('tb_events', function (Blueprint $table) {
             $table->id();
             $table->string('nama_event');
+            $table->integer('kategori');
             $table->string('tipe');
             $table->text('regulasi');
             $table->integer('stok');

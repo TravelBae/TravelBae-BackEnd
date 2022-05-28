@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_tempat');
 
+            $table->integer('kategori');
             // tipe jadiin tabel baru
             $table->string('tipe');
             $table->text('deskripsi');

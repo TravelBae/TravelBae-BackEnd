@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('tb_admins', function (Blueprint $table) {
             $table->id();
-            $table->string('username_admin');
-            $table->string('password_admin');
-            $table->string('nama_admin');
-            $table->string('noHP_admin');
+            $table->string('username');
+            $table->string('password');
+            $table->string('nama');
+            $table->string('noHP');
             $table->string('role_id');
         });
     }

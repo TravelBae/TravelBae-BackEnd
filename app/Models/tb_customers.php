@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-class tb_owner extends Authenticatable
+class tb_customers extends Authenticatable
 {
     use HasApiTokens, HasFactory;
     protected $fillable = [
         'username',
         'password',
-        'nama',
+        'noHP',
+        'email',
         'role_id'
     ];
 }

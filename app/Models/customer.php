@@ -10,10 +10,10 @@ class customer extends Model
     use HasFactory;
     protected $table = 'tb_customers';
     protected $fillable = [
-        'nama_customer',
-        'username_customer',
-        'password_customer',
-        'noHP_customer',
+        'nama',
+        'username',
+        'password',
+        'noHP',
         'email',
         'role_id'
     ];
