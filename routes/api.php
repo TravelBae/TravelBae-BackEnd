@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CustomerController;
 use App\Http\Controllers\API\TourismPlacesController;
 use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\OrderController;
@@ -18,7 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Login
 Route::post('login', [AuthController::class, 'login']);
 
+//Register
+Route::post('register', [AuthController::class, 'register']);
+
 Route::group(["middleware" =>['auth:sanctum']], function() {
+    Route::resource('customer', CustomerController::class);
+    Route::put('change-password/{id}', [CustomerController::class, 'change_password']);
     Route::get('check-token', [AuthController::class, 'check_token']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::resource('tourplaces', TourismPlacesController::class);
