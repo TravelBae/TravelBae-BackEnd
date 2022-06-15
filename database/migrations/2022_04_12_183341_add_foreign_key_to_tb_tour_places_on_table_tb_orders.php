@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_order_details', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_tempat');            
-            $table->unsignedBigInteger('id_event');            
-            $table->unsignedBigInteger('id_order');            
-            $table->string('atas_nama');
+        Schema::table('tb_orders', function (Blueprint $table) {
+            $table->foreign('id_tempat')->references('id')->on('tb_tour_places')->onDelete('cascade');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_order_details');
+        Schema::table('tb_orders', function (Blueprint $table) {
+            Schema::dropIfExists('id_tempat');
+        });
     }
 };

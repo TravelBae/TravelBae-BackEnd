@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('tb_orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_customer');
+            $table->unsignedBigInteger('id_tempat')->nullable();
+            $table->unsignedBigInteger('id_event')->nullable();
             $table->string('nama_customer');
             $table->string('order_status');
             $table->date('tanggal_beli');

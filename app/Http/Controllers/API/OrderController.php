@@ -28,4 +28,10 @@ class OrderController extends Controller
     {
         return tb_order::find($id);
     }
+
+    public function show_by_cus_id()
+    {
+
+        return tb_order::where('id_customer', auth('sanctum')->user()->id) -> get();
+    }
 }

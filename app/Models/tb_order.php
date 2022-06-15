@@ -11,6 +11,8 @@ class tb_order extends Model
     protected $fillable = [
         'id_customer',
         'nama_customer',
+        'id_tempat',
+        'id_event',
         'order_status',
         'tanggal_beli',
         'total_bayar',

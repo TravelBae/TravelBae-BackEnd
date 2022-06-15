@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('tb_order_details', function (Blueprint $table) {
-            $table->foreign('id_order')->references('id')->on('tb_orders')->onDelete('cascade');
+        Schema::table('tb_orders', function (Blueprint $table) {
+            $table->foreign('id_event')->references('id')->on('tb_events')->onDelete('cascade');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('tb_order_details', function (Blueprint $table) {
-            Schema::dropIfExists('id_order');
+        Schema::table('tb_orders', function (Blueprint $table) {
+            Schema::dropIfExists('id_event');
         });
     }
 };
