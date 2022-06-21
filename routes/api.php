@@ -30,6 +30,7 @@ Route::group(["middleware" =>['auth:sanctum']], function() {
     Route::resource('tourplaces', TourismPlacesController::class);
     Route::resource('event', EventController::class);
     Route::resource('admin/order', OrderController::class);
+    Route::post('customer/order/create', [OrderController::class, 'store']);
     Route::get('customer/order/show_cus', [OrderController::class, 'show_by_cus_id']);
     Route::get('admin/confirmation/{id}', [ConfirmationController::class, 'confirmation']);
     Route::get('owner/homepage', [ViewAllHomepageController::class, 'homepage']);

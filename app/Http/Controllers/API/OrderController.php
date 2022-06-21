@@ -18,6 +18,16 @@ class OrderController extends Controller
         return tb_order::all();
     }
 
+    public function store(Request $request)
+    {
+        $request -> validate ([
+            "id_customer" => "required:tb_order,id_customer",
+        ], [
+            "required" => "id customer harus ada"
+        ]);
+        return tb_order::create($request->all());
+    }
+
     /**
      * Display the specified resource.
      *
