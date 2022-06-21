@@ -86,6 +86,21 @@ class DatabaseSeeder extends Seeder
             'role_id' => '3'
         ]);
 
+        //Data default untuk id = 1
+        DB::table('tb_tour_places')->insert([
+            'nama_tempat' => 'a',
+            'kategori' => '1',
+            'tipe' => 'a',
+            'deskripsi' => 'a',
+            'stok_tiket' => '1',
+            'harga' => '1',
+            'jam_buka' => '070000',
+            'alamat' => 'a',
+            'img_tempat' => 'a',
+            'created_at' => '2022-06-06 15:00:06',
+            'updated_at' => '2022-06-06 15:00:06'
+        ]);
+
         DB::table('tb_tour_places')->insert([
             'nama_tempat' => 'Bali Reptile Park',
             'kategori' => '1',
@@ -128,16 +143,17 @@ class DatabaseSeeder extends Seeder
             'updated_at' => '2022-06-06 15:00:06'
         ]);
 
+        //Data default untuk id = 1
         DB::table('tb_events')->insert([
-            'nama_event' => 'Pertunjukan Uluwatu Kecak dan Fire Dance Show',
+            'nama_event' => 'a',
             'kategori' => '2',
-            'tipe' => 'Atraksi',
-            'regulasi' => 'Kamu bisa menyaksikan tari Kecak dari Bali yang legendaris dan menakjubkan, lengkap dengan pertunjukan api yang keren. Tentu saja untuk pertunjukan dan pencahayaan kontras yang maksimal, acara ini harus digelar setelah matahari terbenam. Kamu pun bisa datang sedikit lebih awal untuk menikmati pemandangan matahari terbenam dari pinggir pulau sebelum acara dimulai.',
-            'stok' => '700',
-            'harga' => '14000',
+            'tipe' => 'a',
+            'regulasi' => 'a',
+            'stok' => '1',
+            'harga' => '1',
             'jam_mulai' => '070000',
-            'alamat' => 'Kawasan Parkir Pura Uluwatu, Desa Pecatu, Kuta Sel., Kabupaten Badung, Bali 80361, Indonesia',
-            'img_tempat' => 'https://firebasestorage.googleapis.com/v0/b/travelbae-9f9a6.appspot.com/o/tari_kecak.jpeg?alt=media&token=fc2efceb-c3fd-4bd6-8127-5f2e71886ad0',
+            'alamat' => 'a',
+            'img_tempat' => 'a',
             'created_at' => '2022-06-06 15:00:06',
             'updated_at' => '2022-06-06 15:00:06'
         ]);
