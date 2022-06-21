@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\tour_place;
 use App\Models\event;
 use App\Models\tb_order;
-use App\Models\customer;
+use App\Models\tb_customer;
 
 class ViewAllHomepageController extends Controller
 {
-    public function homepage() 
+    public function homepage()
     {
         $total_sales = tb_order::all() -> sum('total_bayar');
-        $total_user = customer::all() -> count();
+        $total_user = tb_customer::all() -> count();
         $total_tour_places = tour_place::all() -> count();
         $total_event = event::all() -> count();
         $unconfirmed_order = tb_order::where('order_status', 'unconfirmed') -> count();
