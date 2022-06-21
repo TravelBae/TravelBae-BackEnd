@@ -10,14 +10,14 @@ class tb_order extends Model
     use HasFactory;
     protected $fillable = [
         'id_customer',
-        'nama_customer',
         'id_tempat',
         'id_event',
+        'id_bank',
+        'nama_customer',
         'order_status',
         'tanggal_beli',
         'total_bayar',
-        'total_tiket',
-        'bank'
+        'total_tiket'
     ];
     public $timestamps = false;
 }

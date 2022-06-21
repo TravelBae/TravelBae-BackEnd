@@ -10,6 +10,7 @@ use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ConfirmationController;
 use App\Http\Controllers\API\ViewAllHomepageController;
+use App\Http\Controllers\API\BankController;
 
 use App\Models\tour_place;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -35,4 +36,5 @@ Route::group(["middleware" =>['auth:sanctum']], function() {
     Route::get('admin/confirmation/{id}', [ConfirmationController::class, 'confirmation']);
     Route::get('owner/homepage', [ViewAllHomepageController::class, 'homepage']);
     Route::resource('owner/order', OrderController::class);
+    Route::resource('bank', BankController::class);
 });

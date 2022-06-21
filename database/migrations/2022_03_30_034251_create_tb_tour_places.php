@@ -16,16 +16,12 @@ return new class extends Migration
         Schema::create('tb_tour_places', function (Blueprint $table) {
             $table->id();
             $table->string('nama_tempat');
-
             $table->integer('kategori');
-            // tipe jadiin tabel baru
             $table->string('tipe');
             $table->text('deskripsi');
             $table->integer('stok_tiket');
             $table->integer('harga');
             $table->time('jam_buka');
-
-            // alamat jadiin tabel baru
             $table->string('alamat');
             $table->string('img_tempat');
             $table->timestamps();

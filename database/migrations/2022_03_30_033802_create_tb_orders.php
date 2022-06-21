@@ -18,12 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('id_customer');
             $table->unsignedBigInteger('id_tempat')->default(999);
             $table->unsignedBigInteger('id_event')->default(999);
+            $table->unsignedBigInteger('id_bank');
             $table->string('nama_customer');
             $table->string('order_status');
             $table->date('tanggal_beli');
             $table->integer('total_bayar');
             $table->integer('total_tiket');
-            $table->string('bank');
         });
     }
 
