@@ -199,5 +199,17 @@ class DatabaseSeeder extends Seeder
             'bank' => 'Mandiri'
         ]);
 
+        DB::table('tb_orders')->insert([
+            'id_customer' => '2',
+            'id_tempat' => '3',
+            'id_event' => '1',
+            'nama_customer' => 'Isnan',
+            'order_status' => 'Unconfirmed',
+            'tanggal_beli' => '2022-06-21',
+            'total_bayar' => '50000',
+            'total_tiket' => '2',
+            'bank' => 'BCA'
+        ]);
+
     }
 }
