@@ -15,8 +15,8 @@ class ViewAllHomepageController extends Controller
     {
         $total_sales = tb_order::all() -> sum('total_bayar');
         $total_user = tb_customer::all() -> count();
-        $total_tour_places = tour_place::all() -> count();
-        $total_event = event::all() -> count();
+        $total_tour_places = tour_place::where('id', "!=", 999) -> count();
+        $total_event = event::where('id', "!=", 999) -> count();
         $unconfirmed_order = tb_order::where('order_status', 'unconfirmed') -> count();
 
         return [
