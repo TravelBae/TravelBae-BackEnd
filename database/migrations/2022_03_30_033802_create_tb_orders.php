@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date('tanggal_beli');
             $table->integer('total_bayar');
             $table->integer('total_tiket');
+            $table->string('bank');
         });
     }
 

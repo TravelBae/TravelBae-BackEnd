@@ -17,7 +17,8 @@ class tb_order extends Model
         'order_status',
         'tanggal_beli',
         'total_bayar',
-        'total_tiket'
+        'total_tiket',
+        'bank'
     ];
     public $timestamps = false;
 }
