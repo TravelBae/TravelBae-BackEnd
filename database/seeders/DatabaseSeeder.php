@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
         DB::table('tb_tour_places')->insert([
             'nama_tempat' => 'a',
             'kategori' => '1',
-            'tipe' => 'a',
+            'tipe' => 'Museum',
             'deskripsi' => 'a',
             'stok_tiket' => '1',
             'harga' => '1',
