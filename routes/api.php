@@ -10,7 +10,6 @@ use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ConfirmationController;
 use App\Http\Controllers\API\ViewAllHomepageController;
-use App\Http\Controllers\API\BankController;
 
 use App\Models\tour_place;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

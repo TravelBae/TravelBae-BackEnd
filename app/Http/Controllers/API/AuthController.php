@@ -9,7 +9,6 @@ use Illuminate\Auth\RequestGuard;
 use App\Models\tb_customer;
 use App\Models\tb_admin;
 use App\Models\tb_owner;
-use App\Models\tb_customers;
 
 class AuthController extends Controller
 {

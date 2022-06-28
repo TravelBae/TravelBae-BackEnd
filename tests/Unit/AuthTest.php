@@ -62,4 +62,32 @@ class LoginTest extends TestCase
 
         $response->assertStatus(302);
     }
+
+    public function test_success_register() {
+
+        $response = $this->post('/register', [
+            'username' => 'dwija',
+            'password' => '123',
+            'password_confirmation' => '123',
+            'email' => 'dwija@gmail.com',
+            'noHP' => '081111111111'
+        ]);
+
+        $response->assertStatus(500);
+    }
+
+    public function test_failed_register() {
+
+        $response = $this->post('/register', [
+            'username' => "",
+            'password' => '123',
+            'password_confirmation' => '123',
+            'email' => 'dwija@gmail.com',
+            'noHP' => '081111111111'
+        ]);
+
+        $response->assertStatus(500);
+    }
+
+
 }
